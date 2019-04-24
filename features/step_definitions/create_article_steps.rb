@@ -15,5 +15,6 @@ Given("I visit the {string} page") do |string|
   end
   
   Then("I should be on {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    # http://localhost:3000/articles/3 -> Need to be articles/id
+    visit (`/articles/${article[id]}`)
   end
