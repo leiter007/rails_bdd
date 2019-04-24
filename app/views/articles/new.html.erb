@@ -3,16 +3,16 @@
 
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
     <p>
-      <%= form.label :title %><br>
+      <%= form.label :Title %><br>
       <%= form.text_field :title %>
     </p>
    
     <p>
-      <%= form.label :content %><br>
+      <%= form.label :Content %><br>
       <%= form.text_area :content %>
     </p>
    
     <p>
-      <%= form.submit %>
+      <%= form.submit "Create Article" %>
     </p>
   <% end %>
