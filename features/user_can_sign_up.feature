@@ -11,3 +11,4 @@ Scenario: Successfully create an account (Happy path)
     And I fill in "Password confirmation" with "password"
     And I click "Sign up" button
     Then I should see "Welcome, felix@craft.se"
+    And I should be on landing page
