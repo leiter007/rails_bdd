@@ -3,11 +3,18 @@ Feature: Edit articles
     In order to keep my content accurate
     I would like to be able to edit my published articles
 
-    Background: Article is already created
+    Background: User exists and has logged in, and article is already created
+         Given the following user exists
+        | email         | password  |
+        | felix@craft.se| password  |
+        And I visit the sign_in page
+        And I fill in "Email" with "felix@craft.se"
+        And I fill in "Password" with "password"
+        And I click "Log in" button
+        And I should be on landing page
         Given the following articles exists
-         | title      | content         | id |
-         | Rails4Life | Slowly learning | 1  |
-        And I visit the landing page
+        | title      | content         | id |
+        | Rails4Life | Slowly learning | 1  |
     
     Scenario: Succesfully update an article
         When I click the Edit link for article "1"

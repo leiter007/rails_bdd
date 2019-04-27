@@ -4,18 +4,14 @@ end
 
 Given("the following user exists") do |table|
   table.hashes.each do |user|
-    User.create!(user)
+    FactoryBot.create(:user, user)
   end
 end
   
 Given("the following articles exists") do |table|
   table.hashes.each do |article|
-    Article.create!(article)
+    FactoryBot.create(:article, article)
   end
-end
-  
-When("I visit the landing page") do
-  visit root_path
 end
 
 When("I click {string} link") do |link|
@@ -38,8 +34,8 @@ When("I click the Show link for article {string}") do |id|
   visit article_path(id)
 end
 
-When("I click OK in popup") do
-  page.accept_confirm "Are you sure?"
-  click_button('delete')
-end
+# When("I click OK in popup") do
+#   page.accept_confirm "Are you sure?"
+#   click_button('delete')
+# end
 
