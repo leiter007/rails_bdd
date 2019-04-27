@@ -20,3 +20,6 @@ When("I click {string} button") do |string|
   click_button string
 end
 
+When("I click the Edit link") do
+  visit edit_article_path(1)
+end
