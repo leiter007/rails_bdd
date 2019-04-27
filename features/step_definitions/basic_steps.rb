@@ -1,3 +1,13 @@
+Given("I visit the sign_in page") do
+  visit new_user_session_path
+end
+
+Given("the following user exists") do |table|
+  table.hashes.each do |user|
+    User.create!(user)
+  end
+end
+  
 Given("the following articles exists") do |table|
   table.hashes.each do |article|
     Article.create!(article)
