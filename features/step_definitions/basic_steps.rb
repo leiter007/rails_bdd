@@ -28,8 +28,8 @@ When("I click the Show link for article {string}") do |id|
   visit article_path(id)
 end
 
-When("I click {string} in popup") do |string|
-  page.accept_alert "Are you sure?"
-  click_button string
+When("I click OK in popup") do
+  page.accept_confirm "Are you sure?"
+  click_button('delete')
 end
 

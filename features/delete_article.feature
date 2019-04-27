@@ -13,6 +13,5 @@ I would like to be able to delete articles
         When I click the Show link for article "1"
         Then I should be on "Rails4Life" page
         And I click "Delete" link
-        And I click "OK" in popup
         Then I should be on landing page
         And I should not see "Rails4Life"

@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'webdrivers', '~> 3.0'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -21,6 +22,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'devise'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
