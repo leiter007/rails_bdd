@@ -10,7 +10,7 @@ Feature: Edit articles
         And I visit the landing page
     
     Scenario: Succesfully update an article
-        When I click the Edit link
+        When I click the Edit link for article "1"
         Then I should be on the "Edit" page of "Rails4Life"
         And I fill in "article[content]" with "Getting a bit better"
         And I click "Update Article" button
