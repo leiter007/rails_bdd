@@ -2,6 +2,10 @@ Then("I should be on landing page") do
     visit root_path
 end
 
+Then("I should be on sign_in page") do
+    visit new_user_session_path
+end
+
 Then("I should see {string}") do |content|
     expect(page).to have_content content
 end
