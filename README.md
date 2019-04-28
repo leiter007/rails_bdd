@@ -24,6 +24,10 @@ I would like to be able to to create articles
 [Ruby on Rails](https://developer.mozilla.ohttps://rubyonrails.org/) |
 [Cucumber](https://cucumber.io/) 
 
+## Deployed site with [Heroku](www.heroku.com):
+https://felix-rails-bdd.herokuapp.com/
+
+
 ## Designed and developed by
 **Felix Bonnier** - [leiter007](https://github.com/leiter007)
 
