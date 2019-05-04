@@ -1,0 +1,11 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+          <li><%="Welcome, #{current_user.email}"%></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <% end %>
+      </ul>
+</nav>

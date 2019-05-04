@@ -1,15 +1,43 @@
-Given("the following articles exists") do |table|
-  table.hashes.each do |article|
-    Article.create!(article)
+Given("I visit the sign_in page") do
+  visit new_user_session_path
+end
+
+Given("the following user exists") do |table|
+  table.hashes.each do |user|
+    FactoryBot.create(:user, user)
   end
 end
   
-When("I visit the landing page") do
-  visit root_path
+Given("the following articles exists") do |table|
+  table.hashes.each do |article|
+    FactoryBot.create(:article, article)
+  end
 end
 
 When("I click {string} link") do |link|
-  click_on link
+  click_link link
+end
+
+# When("I click {string} link for {string}") do |link, article_title|
+#   within(:xpath, "/table/tr[contains(.,'#{article_title}')]") do
+#     click_link(link)
+#   end
+# end
+
+# When("I click {string} link within article table") do |link|
+#   within_table('articles') do
+#     click_link link
+#   end
+# end
+
+When("I click Edit link for {string}") do |article_title|
+  article_id = Article.find_by(title: article_title)
+  visit edit_article_path(article_id)
+end
+
+When("I click Show link for {string}") do |article_title|
+  article_id = Article.find_by(title: article_title)
+  visit article_path(article_id)
 end
 
 When("I fill in {string} with {string}") do |field, content|
@@ -17,19 +45,6 @@ When("I fill in {string} with {string}") do |field, content|
 end
     
 When("I click {string} button") do |string|
-  click_button string
-end
-
-When("I click the Edit link for article {string}") do |id|
-  visit edit_article_path(id)
-end
-
-When("I click the Show link for article {string}") do |id|
-  visit article_path(id)
-end
-
-When("I click {string} in popup") do |string|
-  page.accept_alert "Are you sure?"
   click_button string
 end
 
