@@ -17,7 +17,7 @@ Feature: Edit articles
     | Rails4Life | Slowly learning |
 
   Scenario: Succesfully update an article
-    When I click "Update" link
+    When I click Edit link for "Rails4Life" 
     Then I should be on the Edit page of "Rails4Life"
     And I fill in "article[content]" with "Getting a bit better"
     And I click "Update Article" button

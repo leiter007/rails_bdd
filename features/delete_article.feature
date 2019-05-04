@@ -17,7 +17,7 @@ Feature: Delete articles
     | Rails4Life | Slowly learning |
 
   Scenario: Successfully deleting an article
-    When I click "Show" link
+    When I click Show link for "Rails4Life" 
     Then I should be on "Rails4Life" page
     And I click "Delete" link
     Then I should be on landing page
