@@ -1,14 +1,54 @@
-<h1>Article was successfully created</h1>
-
-<p>
-<strong>Title:</strong>
+<h1>
 <%= @article.title %>
-</p>
+</h1>
 
 <p>
 <strong>Content:</strong>
 <%= @article.content %>
 </p>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment|%>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <p>
+    <%= comment.email %>
+  </p>
+  <p>
+  <%= link_to 'Delete comment', [comment.article, comment],
+    method: :delete,
+    data: { confirm: 'Are you sure?'} %> 
+  <p>
+<% end %>
+
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+
+  <p>
+    <%= form.label :Commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+
+  <p>
+    <%= form.label :Body %><br>
+    <%= form.text_field :body %>
+  </p>
+
+  <p>
+    <%= form.label :Email %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Delete', article_path(@article),
