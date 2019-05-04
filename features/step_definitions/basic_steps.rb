@@ -7,8 +7,8 @@ When("I click {string} link") do |link|
 end
 
 # When("I click {string} link for {string}") do |link, article_title|
-#   within(:xpath, "/table/tr[contains(.,'#{article_title}')]") do
-#     click_link(link)
+#   within("//table/tr[contains('#{article_title}')]") do
+#     click_link link
 #   end
 # end
 
