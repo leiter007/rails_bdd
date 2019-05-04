@@ -19,8 +19,9 @@ Feature: Create comments
   Scenario: Succesfully create a comment
     When I click Show link for "Rails4Life" 
     Then I should be on "Rails4Life" page
-    # And I click "Comment" link
-    # And I fill in "article[content]" with "Getting a bit better"
-    # And I click "Update Article" button
-    # Then I should be on landing page
-    # And I should see "Getting a bit better"
+    And I should see "Add a comment"
+    And I fill in "comment[commenter]" with "Felix"
+    And I fill in "comment[body]" with "Nice article!"
+    And I click "Create Comment" button
+    Then I should see "Commenter: Felix"
+    And I should see "Nice article!"
