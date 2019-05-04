@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :article
-  validates_presence_of :commenter, presence: true
+  validates :commenter, presence: true
   validates :body, presence: true
-  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, allow_blank: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
 end
