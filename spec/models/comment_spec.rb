@@ -12,6 +12,9 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to validate_presence_of :commenter }
     it { is_expected.to validate_presence_of :body }
     it { is_expected.to allow_value("").for(:email) }
+    it { is_expected.not_to allow_value("felix").for(:email) }
+    it { is_expected.not_to allow_value("felix@gmail").for(:email) }
+    it { is_expected.not_to allow_value("felix space@gmail.com").for(:email) }
   end
 
   describe 'Factory' do
