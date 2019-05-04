@@ -13,10 +13,12 @@
     <strong>Commenter:</strong>
     <%= comment.commenter %>
   </p>
-
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
+  </p>
+  <p>
+    <%= comment.email %>
   </p>
 <% end %>
 
@@ -32,6 +34,11 @@
   <p>
     <%= form.label :Body %><br>
     <%= form.text_field :body %>
+  </p>
+
+  <p>
+    <%= form.label :Email %><br>
+    <%= form.text_field :email %>
   </p>
   <p>
     <%= form.submit %>

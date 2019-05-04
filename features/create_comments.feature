@@ -22,6 +22,8 @@ Feature: Create comments
     And I should see "Add a comment"
     And I fill in "comment[commenter]" with "Felix"
     And I fill in "comment[body]" with "Nice article!"
+    And I fill in "comment[email]" with "felix@craft.se"
     And I click "Create Comment" button
     Then I should see "Commenter: Felix"
     And I should see "Nice article!"
+    And I should see "felix@craft.se"
